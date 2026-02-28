@@ -372,41 +372,6 @@ npm install
 npm run dev
 ```
 
----
-
-## Deployment
-
-### 1. Database — Supabase (free)
-
-1. Create project at [supabase.com](https://supabase.com)
-2. Copy connection string from Settings → Database
-3. Set as `DATABASE_URL` in backend env
-
-### 2. Backend — Render (free)
-
-1. Connect GitHub repo at [render.com](https://render.com)
-2. New Web Service → root directory: `backend/`
-3. Build command: `pip install -r requirements.txt && alembic upgrade head`
-4. Start command: `uvicorn app.main:app --host 0.0.0.0 --port 8000`
-5. Add all env vars from `backend/.env`
-
-### 3. Frontend — Vercel (free)
-
-1. Connect GitHub repo at [vercel.com](https://vercel.com)
-2. Root directory: `frontend/`
-3. Add env var: `VITE_API_URL=https://your-render-url.onrender.com`
-4. Deploy
-
-### Free Tier Limits
-
-| Service | Free Limit | Notes |
-|---------|-----------|-------|
-| Vercel | Unlimited | Frontend only |
-| Render | 750 hrs/month | Spins down after 15 min inactivity |
-| Supabase | 500MB DB | Enough for ~100k questions |
-| Groq API | 6000 TPM / 30 req/min | Batched with delays to stay within limits |
-
-> **Tip:** If Render's spin-down is a problem, upgrade to Railway ($5/month) for always-on hosting.
 
 ---
 
